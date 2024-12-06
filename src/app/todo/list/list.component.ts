@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
 export class TodoListComponent implements OnInit {
   private readonly todoListService = inject(TodoListService);
 
-  todoList$ = this.todoListService.todoList$;
+  $todoList = this.todoListService.$todoList;
 
   ngOnInit(): void {
     this.todoListService.fetchList();

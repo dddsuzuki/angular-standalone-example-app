@@ -1,6 +1,6 @@
 <h3>TODO一覧</h3>
 <ul>
-  @for (todo of todoList$(); track $index) {
+  @for (todo of $todoList(); track $index) {
     <li>
       <span>{{ todo.done ? "✅" : "⏺" }}</span>
       <span style="margin-left: 0.5rem">

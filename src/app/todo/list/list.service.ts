@@ -7,7 +7,7 @@ export class TodoListService {
   private readonly todoApi = inject(TodoApiService);
   private readonly todoListSignal = signal<Todo[]>([]);
 
-  get todoList$(): Signal<Todo[]> {
+  get $todoList(): Signal<Todo[]> {
     return this.todoListSignal.asReadonly();
   }
 

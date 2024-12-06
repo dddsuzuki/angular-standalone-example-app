@@ -15,7 +15,7 @@ export class TodoDetailComponent implements OnInit {
   private readonly destroyRef = inject(DestroyRef);
   private readonly todoDetailService = inject(TodoDetailService);
 
-  todo$ = this.todoDetailService.todo$;
+  $todo = this.todoDetailService.$todo;
 
   ngOnInit(): void {
     this.route.paramMap

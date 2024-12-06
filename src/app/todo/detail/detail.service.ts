@@ -7,7 +7,7 @@ export class TodoDetailService {
   private readonly todoApi = inject(TodoApiService);
   private readonly todoSignal = signal<Todo | null>(null);
 
-  get todo$(): Signal<Todo | null> {
+  get $todo(): Signal<Todo | null> {
     return this.todoSignal.asReadonly();
   }
 
