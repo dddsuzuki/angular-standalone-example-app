@@ -1,9 +1,11 @@
 <h3>TODO一覧</h3>
 <ul>
-  <li *ngFor="let todo of todoList$()">
-    <span>{{ todo.done ? "✅" : "⏺" }}</span>
-    <span style="margin-left: 0.5rem">
-      <a [routerLink]="'' + todo.id">{{ todo.content }}</a>
-    </span>
-  </li>
+  @for (todo of todoList$(); track $index) {
+    <li>
+      <span>{{ todo.done ? "✅" : "⏺" }}</span>
+      <span style="margin-left: 0.5rem">
+        <a [routerLink]="'' + todo.id">{{ todo.content }}</a>
+      </span>
+    </li>
+  }
 </ul>
