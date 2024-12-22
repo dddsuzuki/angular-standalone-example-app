@@ -1,6 +1,6 @@
 import { inject, Injectable, Signal, signal } from '@angular/core';
-import { TodoApiService } from '../../api/todo-api.service';
-import { Todo } from '../../domain/todo/todo';
+import { TodoApiService } from '../api/todo-api.service';
+import { Todo } from '../domain/todo/todo';
 
 @Injectable()
 export class TodoListService {

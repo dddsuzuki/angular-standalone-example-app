@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { TodoListComponent } from './list/list.component';
+import { TodoListComponent } from './list.component';
 
 export const routes: Routes = [
   {
@@ -9,6 +9,6 @@ export const routes: Routes = [
   {
     path: ':id',
     loadComponent: () =>
-      import('./detail/detail.component').then((m) => m.TodoDetailComponent),
+      import('./detail.component').then((m) => m.TodoDetailComponent),
   },
 ];
