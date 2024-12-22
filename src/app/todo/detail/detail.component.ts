@@ -1,14 +1,22 @@
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { TodoDetailService } from './detail.service';
-import { distinctUntilChanged } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { distinctUntilChanged } from 'rxjs';
+import { TodoDetailService } from './detail.service';
 
 @Component({
   selector: 'app-todo-detail',
   imports: [],
   providers: [TodoDetailService],
-  templateUrl: './detail.component.html',
+  template: `
+    @let todo = $todo();
+    @if (todo) {
+      <h3>{{ todo.content }}</h3>
+      <div>ID: {{ todo.id }}</div>
+      <div>内容: {{ todo.content }}</div>
+      <div>完了: {{ todo.done ? '✅' : '⏺' }}</div>
+    }
+  `,
 })
 export class TodoDetailComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
